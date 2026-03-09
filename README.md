@@ -1,23 +1,23 @@
-# PowerBI-Session-Maintainer
+# pbi-session-maintainer
 
-A JavaScript automation tool (UserScript) developed to ensure 24/7 uptime for PowerBI monitoring dashboards on NOC/SOC display walls.
+A JavaScript automation tool (UserScript) developed to ensure 24/7 availability of PowerBI reports on warehouse operational displays.
 
 ## Overview
-This script solves the critical problem of session timeouts and browser tab "sleeping" in unattended monitoring environments. It automates the re-authentication process and prevents the browser from suspending the tab during long periods of inactivity, ensuring real-time data visibility.
+This script addresses the issue of session timeouts and browser tab suspension on unattended warehouse terminals. In an operational environment, manual re-authentication is inefficient, this tool automates the login process and keeps the reporting dashboard active 24/7.
 
 ## Features
-- **Anti-Sleep Heartbeat:** Periodically triggers micro-interactions (window scrolls) to reset the browser's energy-saving timers and prevent tab suspension.
-- **Session Persistence:** Detects Microsoft Online login prompts and automatically executes re-authentication sequences.
-- **Native Event Dispatching:** Uses `MouseEvent` simulation to bypass modern browser security restrictions on automated interactions.
-- **Zero-Touch Design:** Optimized for persistent video wall displays without requiring manual intervention.
+- **Anti-Sleep Heartbeat:** Prevents browser-level tab suspension (Energy Saver mode) on stationary warehouse monitors by simulating periodic micro-interactions.
+- **Auto-Login Automation:** Detects Microsoft Online authentication prompts and automatically executes the login flow.
+- **Native Event Simulation:** Uses `MouseEvent` dispatching to ensure compatibility with modern browser security policies regarding automated clicks.
+- **Operational Reliability:** Designed for unattended terminals where continuous data visibility is critical for warehouse workflow.
 
 ## Technical Details
 - **Engine:** Vanilla JavaScript (ES6)
-- **Deployment:** Designed for **Tampermonkey** / Greasemonkey browser extensions.
+- **Deployment:** Optimized for **Tampermonkey** extensions.
 - **Target Domains:** `microsoftonline.com`, `powerbi.com`.
 
 ## Setup
 1. Install the **Tampermonkey** browser extension.
 2. Create a new script in the Tampermonkey dashboard.
 3. Paste the content of `pbi_maintainer.user.js` into the editor.
-4. The script will activate automatically upon detecting a login prompt or an active PowerBI session.
+4. The script activates automatically when a login prompt or PowerBI report is detected.
