@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PowerBI Session Maintainer
 // @version      1.0
-// @description  Automates session persistence for monitoring display walls
+// @description  Automates session persistence for warehouse operational displays
 // @author       Kacper Jaworski
 // @match        https://login.microsoftonline.com/*
 // @match        https://app.powerbi.com/*
