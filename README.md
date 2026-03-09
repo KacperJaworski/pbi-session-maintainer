@@ -1,23 +1,23 @@
 # pbi-session-maintainer
 
-A JavaScript automation tool (UserScript) developed to ensure 24/7 availability of PowerBI reports on warehouse operational displays.
+A JavaScript automation tool (UserScript) developed to ensure 24/7 availability of PowerBI operational reports across all logistics centers in Poland.
 
 ## Overview
-This script addresses the issue of session timeouts and browser tab suspension on unattended warehouse terminals. In an operational environment, manual re-authentication is inefficient, this tool automates the login process and keeps the reporting dashboard active 24/7.
+This project provides a "Self-Healing" mechanism for PowerBI dashboards running on Ubuntu 24.04 LTS terminals. It addresses the issue of Chrome's background process management "freezing" inactive tabs during 24h cycles. The solution uses a dual-layer approach: a system-level interaction tool (e.g., xclicker) to prevent thread suspension and a custom JavaScript UserScript to manage session persistence and automated re-authentication.
 
 ## Features
-- **Anti-Sleep Heartbeat:** Prevents browser-level tab suspension (Energy Saver mode) on stationary warehouse monitors by simulating periodic micro-interactions.
-- **Auto-Login Automation:** Detects Microsoft Online authentication prompts and automatically executes the login flow.
-- **Native Event Simulation:** Uses `MouseEvent` dispatching to ensure compatibility with modern browser security policies regarding automated clicks.
-- **Operational Reliability:** Designed for unattended terminals where continuous data visibility is critical for warehouse workflow.
+- **Anti-Idle Heartbeat:** Triggers periodic micro-scrolls (30s interval) to keep the PowerBI rendering engine active and prevent internal view freezing.
+- **Automated Re-authentication:** Monitors the DOM for Microsoft Online authentication prompts (`#idSIButton9`) and executes a secure login sequence.
+- **Event Simulation:** Uses native `MouseEvent` dispatching to bypass modern browser security policies regarding automated clicks in inactive tabs.
+- **Deployment Scale:** Successfully rolled out across multiple logistics hubs to support 24/7 warehouse operations.
 
 ## Technical Details
-- **Engine:** Vanilla JavaScript (ES6)
-- **Deployment:** Optimized for **Tampermonkey** extensions.
-- **Target Domains:** `microsoftonline.com`, `powerbi.com`.
+- **Environment:** Ubuntu 24.04.3 LTS / Google Chrome
+- **Engine:** Vanilla JavaScript (ES6) / Tampermonkey
+- **Target Domains:** `microsoftonline.com`, `powerbi.com`
 
-## Setup
-1. Install the **Tampermonkey** browser extension.
-2. Create a new script in the Tampermonkey dashboard.
-3. Paste the content of `pbi_maintainer.user.js` into the editor.
-4. The script activates automatically when a login prompt or PowerBI report is detected.
+## Setup & Usage
+1. Ensure a system-level interaction tool (e.g., xclicker) is active to prevent OS-level thread suspension.
+2. Install the **Tampermonkey** browser extension.
+3. Import `pbi_maintainer.user.js` into Tampermonkey.
+4. The script activates automatically upon detecting a login prompt or an active PowerBI session. The script runs automatically, providing "Zero-Touch" dashboard persistence.
