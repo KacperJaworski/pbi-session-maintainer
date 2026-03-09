@@ -20,4 +20,4 @@ This project provides a "Self-Healing" mechanism for PowerBI dashboards running 
 1. Ensure a system-level interaction tool (e.g., xclicker) is active to prevent OS-level thread suspension.
 2. Install the **Tampermonkey** browser extension.
 3. Import `pbi_maintainer.user.js` into Tampermonkey.
-4. The script activates automatically upon detecting a login prompt or an active PowerBI session. The script runs automatically, providing "Zero-Touch" dashboard persistence.
+4. The script activates automatically, providing "Zero-Touch" dashboard persistence upon detecting a login prompt or an active session.
