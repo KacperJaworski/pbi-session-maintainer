@@ -1,7 +1,5 @@
 # pbi-session-maintainer
 
-A JavaScript automation tool (UserScript) developed to ensure 24/7 availability of PowerBI operational reports across all logistics centers in Poland.
-
 ## Overview
 This project provides a "Self-Healing" mechanism for PowerBI dashboards running on Ubuntu 24.04 LTS terminals. It addresses the issue of Chrome's background process management "freezing" inactive tabs during 24h cycles. The solution uses a dual-layer approach: a system-level interaction tool (e.g., xclicker) to prevent thread suspension and a custom JavaScript UserScript to manage session persistence and automated re-authentication.
 
@@ -11,12 +9,14 @@ This project provides a "Self-Healing" mechanism for PowerBI dashboards running 
 - **Event Simulation:** Uses native `MouseEvent` dispatching to bypass modern browser security policies regarding automated clicks in inactive tabs.
 - **Deployment Scale:** Successfully rolled out across multiple logistics hubs to support 24/7 warehouse operations.
 
-## Technical Details
-- **Environment:** Ubuntu 24.04.3 LTS / Google Chrome
-- **Engine:** Vanilla JavaScript (ES6) / Tampermonkey
-- **Target Domains:** `microsoftonline.com`, `powerbi.com`
+## Tech Stack
+- JavaScript (ES6+)
+- Tampermonkey (UserScript)
+- Ubuntu 24.04.3 LTS / Google Chrome
+- Xclicker (HID Simulation)
+- DOM Manipulation, MouseEvent Dispatching
 
-## Setup & Usage
+## Usage
 1. Ensure a system-level interaction tool (e.g., xclicker) is active to prevent OS-level thread suspension.
 2. Install the **Tampermonkey** browser extension.
 3. Import `pbi_maintainer.user.js` into Tampermonkey.
