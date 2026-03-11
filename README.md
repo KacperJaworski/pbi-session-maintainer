@@ -17,11 +17,7 @@ This project provides a "Self-Healing" mechanism for PowerBI dashboards running 
 - DOM Manipulation, MouseEvent Dispatching
 
 ## Usage
-1. System Prep:
-   Install and activate `xclicker` to prevent OS-level thread suspension.
-2. Browser Setup:
-   Install the **Tampermonkey** extension in Google Chrome.
-3. Script Deployment:
-4. Import `pbi_maintainer.user.js` into the extension.
-5. Activation:
-   The script will automatically trigger upon detecting `powerbi.com` or `microsoftonline.com` domains.
+1. **System Prep:** Install and activate `xclicker` on the Ubuntu terminal to prevent OS-level thread suspension.
+2. **Browser Setup:** Install the **Tampermonkey** extension in Google Chrome.
+3. **Script Deployment:** Create a new script in Tampermonkey and paste the contents of `pbi_maintainer.user.js`.
+4. **Activation:** Ensure the script is enabled. It will automatically trigger upon detecting `powerbi.com` or `microsoftonline.com` domains.
