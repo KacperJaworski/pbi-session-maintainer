@@ -1,5 +1,11 @@
 # pbi-session-maintainer
 
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=power-bi&logoColor=black)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
+![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white)
+![Tampermonkey](https://img.shields.io/badge/Tampermonkey-00485B?style=for-the-badge&logo=tampermonkey&logoColor=white)
+
 ## Overview
 This project provides a "Self-Healing" mechanism for PowerBI dashboards running on Ubuntu 24.04 LTS terminals. It addresses the issue of Chrome's background process management "freezing" inactive tabs during 24h cycles. The solution uses a dual-layer approach: a system-level interaction tool (e.g., xclicker) to prevent thread suspension and a custom JavaScript UserScript to manage session persistence and automated re-authentication.
 
